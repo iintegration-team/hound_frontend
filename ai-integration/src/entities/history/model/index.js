@@ -41,6 +41,7 @@ export const useHistoryStore = defineStore('history', () => {
 
     if (res.id !== undefined) {
       stories.value = stories.value.filter((story) => story.id !== id);
+      selectedStories.value = selectedStories.value.filter((story) => story !== id);
       return true;
     }
   }
@@ -51,6 +52,7 @@ export const useHistoryStore = defineStore('history', () => {
 
     if (res) {
       stories.value = stories.value.filter((story) => !selectedStoriesRaw.includes(story.id));
+      selectedStories.value = [];
       return true;
     }
   }
