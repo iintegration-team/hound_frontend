@@ -36,7 +36,7 @@ export const newTab = () => {
           }
 
           chrome.storage.local.set({ [id]: tabData }).then(() => {
-            fetch('https://hound.sosus.org/stories/', {
+            fetch('https://hound.sosus.org/api/stories/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json;charset=utf-8',
