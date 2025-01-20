@@ -2,16 +2,15 @@
 	import Button from 'primevue/button';
 	import { useConfirm } from 'primevue/useconfirm';
 	import { confirmData } from '../staticData/confirmData';
-	import * as toast from '@/shared/lib/toast';
+	import { deleteAllStories } from '../model';
+
 	const confirm = useConfirm();
 
 	const deleteAll = (event) => {
 		confirm.require({
 			target: event.currentTarget,
 			message: 'Вы уверены, что хотите удалить все истории?',
-			accept: () => {
-				toast.info('Успешно', 'Все истории удалены');
-			},
+			accept: () => deleteAllStories(),
 			...confirmData,
 		});
 	};

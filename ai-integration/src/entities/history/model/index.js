@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { shallowRef, ref, watch } from 'vue';
+import { shallowRef, ref, watch, toRaw } from 'vue';
 import { useDates } from '@/shared/lib/useDates';
 import { toDateTime } from '@/shared/lib/toDateTime';
 import { historyAPI } from '../api';
@@ -36,11 +36,31 @@ export const useHistoryStore = defineStore('history', () => {
     }
   }
 
-  const deleteStory = async (id) => {
-    const res = await historyAPI.deleteStory(id);
+  const deleteStoryById = async (id) => {
+    const res = await historyAPI.deleteStoryById(id);
 
     if (res.id !== undefined) {
       stories.value = stories.value.filter((story) => story.id !== id);
+      return true;
+    }
+  }
+
+  const deleteSelectedStories = async () => {
+    const selectedStoriesRaw = toRaw(selectedStories.value);
+    const res = await historyAPI.deleteSelectedStories(selectedStoriesRaw);
+
+    if (res) {
+      stories.value = stories.value.filter((story) => !selectedStoriesRaw.includes(story.id));
+      return true;
+    }
+  }
+
+  const deleteAllStories = async () => {
+    const res = await historyAPI.deleteAllStories();
+
+    if (res) {
+      stories.value = [];
+      return true;
     }
   }
 
@@ -123,7 +143,9 @@ export const useHistoryStore = defineStore('history', () => {
 
   return {
     fetchStories,
-    deleteStory,
+    deleteStoryById,
+    deleteSelectedStories,
+    deleteAllStories,
     init,
     selectStory,
     deselectStory,

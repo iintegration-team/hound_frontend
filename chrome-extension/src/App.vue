@@ -9,17 +9,16 @@
 
 	const submit = (data) => {
 		data.device = navigator.userAgent;
-		channel.postMessage({action: 'login', form: data});
+		channel.postMessage({ action: 'login', form: data });
 	};
 
-		channel.onmessage = (messageEvent) => {
+	channel.onmessage = (messageEvent) => {
 		if (messageEvent.data.action === 'showAuthenticatedUI') {
-			isAuth.value = messageEvent.data.result;	
+			isAuth.value = messageEvent.data.result;
 		}
-	}
+	};
 
-	channel.postMessage({action:'check'});
-	
+	channel.postMessage({ action: 'check' });
 </script>
 
 <template>

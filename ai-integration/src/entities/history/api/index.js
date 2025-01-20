@@ -18,14 +18,40 @@ const fetchStories = async (params = { limit: 10, offset: 0, start_date: null, e
   }
 }
 
-const deleteStory = async (id) => {
+const deleteStoryById = async (id) => {
   try {
-    const res = await axiosInstance.delete('/api/stories/', {
-      data: {
-        id
-      }
-    });
+    const res = await axiosInstance.delete(`/api/stories/${id}`);
 
+    if (res.status === 200) {
+      return res?.data || {};
+    }
+
+    return {}
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+const deleteAllStories = async () => {
+  try {
+    const res = await axiosInstance.delete('/api/stories/all');
+    if (res.status === 200) {
+      return res?.data || {};
+    }
+
+    return {}
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+const deleteSelectedStories = async (story_ids) => {
+  console.log({ story_ids })
+  try {
+    const res = await axiosInstance.delete('/api/stories/', { data: { story_ids } });
+    console.log(res)
     if (res.status === 200) {
       return res?.data || {};
     }
@@ -39,5 +65,7 @@ const deleteStory = async (id) => {
 
 export const historyAPI = {
   fetchStories,
-  deleteStory
+  deleteStoryById,
+  deleteAllStories,
+  deleteSelectedStories
 }

@@ -12,9 +12,11 @@
 		const select = ruCardinalRules.select(count);
 
 		if (select === 'one') {
-			return count + 'день';
+			return count + ' день';
 		} else if (select === 'few') {
-			return count + 'дня';
+			return count + ' дня';
+		} else if (select === 'many') {
+			return count + ' дней';
 		}
 	};
 
@@ -42,7 +44,7 @@
 			const dateDiff = Math.abs(end.getTime() - start.getTime());
 			const daysDiff = Math.ceil(dateDiff / SECONDS_PER_DAY_TIMESPAN) + 1;
 
-			return `База знаний за ${daysDiff} day${daysDiff > 1 ? 's' : ''}`;
+			return `База знаний за ${pluralDay(daysDiff)}`;
 		}
 	});
 </script>
