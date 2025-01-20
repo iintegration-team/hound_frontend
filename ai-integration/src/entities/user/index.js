@@ -1,4 +1,3 @@
-import Login from './ui/Login.vue';
-import SignUp from './ui/SignUp.vue';
-import { useUserStore } from './model/'
-export { Login, SignUp, useUserStore };
+export { default as Login } from './ui/Login.vue';
+export { default as SignUp } from './ui/SignUp.vue';
+export { useUserStore } from './model/';

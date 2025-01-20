@@ -2,8 +2,8 @@
 	import { onUnmounted } from 'vue';
 	import { useHistoryStore } from '@/entities/history';
 	import { useRoute } from 'vue-router';
-	import HistoryList from '@/widgets/HistoryList.vue';
-	import HistoryBar from '@/widgets/HistoryBar.vue';
+	import { HistoryList } from '@/widgets/HistoryList';
+	import { HistoryBar } from '@/widgets/HistoryBar';
 	import Paginator from 'primevue/paginator';
 
 	const history = useHistoryStore();

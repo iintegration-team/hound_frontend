@@ -1,6 +1,6 @@
 <script setup>
 	import { ChatContainer, useChatStore } from '@/entities/chat';
-	import MessageList from './MessageList.vue';
+	import { MessageList } from '@/widgets/MessageList';
 	import { SendMessage } from '@/features/sendMessage';
 	import Message from 'primevue/message';
 

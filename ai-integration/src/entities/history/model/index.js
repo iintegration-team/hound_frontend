@@ -98,13 +98,13 @@ export const useHistoryStore = defineStore('history', () => {
 
         const needRefreshOffset =
           newOffset === oldOffset && newOffset !== 0 && newDates !== oldDates;
-        
+
 
         if (needRefreshOffset) {
           offset.value = 0;
           return;
         }
-  
+
         const page = newOffset / newLimit + 1;
 
         router.push({
@@ -120,23 +120,23 @@ export const useHistoryStore = defineStore('history', () => {
       }
     );
   }
-    
-  return { 
-    fetchStories, 
-    deleteStory, 
-    init, 
-    selectStory, 
-    deselectStory, 
-    clearFilters, 
+
+  return {
+    fetchStories,
+    deleteStory,
+    init,
+    selectStory,
+    deselectStory,
+    clearFilters,
     enableWatch,
-    setVarsFromQuery, 
-    limit, 
-    offset, 
-    total, 
-    loading, 
-    stories, 
-    selectedStories, 
-    rowsPerPage, 
-    dates 
+    setVarsFromQuery,
+    limit,
+    offset,
+    total,
+    loading,
+    stories,
+    selectedStories,
+    rowsPerPage,
+    dates
   }
 })

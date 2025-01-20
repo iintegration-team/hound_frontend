@@ -1,12 +1,12 @@
 export const confirmData = {
   icon: 'pi pi-info-circle',
   rejectProps: {
-    label: 'Cancel',
+    label: 'Закрыть',
     severity: 'secondary',
     outlined: true,
   },
   acceptProps: {
-    label: 'Delete',
+    label: 'Удалить',
     severity: 'danger',
   }
 }

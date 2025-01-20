@@ -3,5 +3,5 @@
 </script>
 
 <template>
-	<SignUp :showLevelPassword="true"/>
+	<SignUp :showLevelPassword="true" />
 </template>

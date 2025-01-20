@@ -6,7 +6,7 @@ export default [
   {
     path: '/',
     name: 'Chat',
-    component: () => import('@/pages/chat/Index.vue'),
+    component: () => import('@/pages/chat/Chat.vue'),
     meta: {
       layout: layouts.DEFAULT,
       middleware: middlewareTypes.LOGIN,
@@ -16,7 +16,7 @@ export default [
   {
     path: '/history',
     name: 'History',
-    component: () => import('@/pages/history/Index.vue'),
+    component: () => import('@/pages/history/History.vue'),
     meta: {
       layout: layouts.DEFAULT,
       middleware: middlewareTypes.LOGIN,
@@ -26,7 +26,7 @@ export default [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/pages/login/Index.vue'),
+    component: () => import('@/pages/login/Login.vue'),
     meta: {
       layout: layouts.LOGIN,
       middleware: middlewareTypes.ENTERED,
@@ -36,7 +36,7 @@ export default [
   {
     path: '/sign-up',
     name: 'SignUp',
-    component: () => import('@/pages/sign-up/Index.vue'),
+    component: () => import('@/pages/sign-up/SignUp.vue'),
     meta: {
       layout: layouts.LOGIN,
       middleware: middlewareTypes.ENTERED,

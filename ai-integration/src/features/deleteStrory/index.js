@@ -1,5 +1,3 @@
-import DeleteStory from "./ui/DeleteStory.vue";
-import DeleteStoryAll from "./ui/DeleteStoryAll.vue";
-import DeleteStorySelected from "./ui/DeleteStorySelected.vue";
-
-export { DeleteStory, DeleteStoryAll, DeleteStorySelected };
+export { default as DeleteStory } from './ui/DeleteStory.vue';
+export { default as DeleteStoryAll } from './ui/DeleteStoryAll.vue';
+export { default as DeleteStorySelected } from './ui/DeleteStorySelected.vue';

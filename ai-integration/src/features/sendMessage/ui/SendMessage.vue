@@ -2,7 +2,7 @@
 	import { useChatStore } from '@/entities/chat';
 	import Textarea from 'primevue/textarea';
 	import Button from 'primevue/button';
-	import DatePickerText from '@/widgets/DatePickerText.vue';
+	import { DatePickerText } from '@/widgets/DatePcikerText';
 
 	const chatStore = useChatStore();
 	const submit = () => {

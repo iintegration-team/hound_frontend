@@ -1,3 +1,1 @@
-import SelectStory from "./ui/SelectStory.vue";
-
-export { SelectStory };
+export { default as SelectStory } from './ui/SelectStory.vue';

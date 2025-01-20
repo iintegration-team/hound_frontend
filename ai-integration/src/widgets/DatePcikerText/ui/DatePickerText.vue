@@ -3,7 +3,20 @@
 	import DatePicker from 'primevue/datepicker';
 	import { humanDate } from '@/shared/lib/humanDate';
 	import { SECONDS_PER_DAY_TIMESPAN } from '@/shared/lib/SecondsPerDayTimespan';
+
 	const dates = defineModel();
+
+	const ruCardinalRules = new Intl.PluralRules('ru-Ru');
+
+	const pluralDay = (count) => {
+		const select = ruCardinalRules.select(count);
+
+		if (select === 'one') {
+			return count + 'день';
+		} else if (select === 'few') {
+			return count + 'дня';
+		}
+	};
 
 	const text = computed(() => {
 		if (dates.value === null) {
@@ -17,19 +30,19 @@
 			const currentDate = new Date();
 
 			if (humanDateStart === humanDate(currentDate)) {
-				return 'knowledge base in today';
+				return 'База знаний за сегодня';
 			}
 
-			return 'knowledge base in ' + humanDateStart;
+			return 'База знаний за ' + humanDateStart;
 		} else if (start && end) {
 			if (start.getTime() === end.getTime()) {
-				return 'knowledge base in ' + humanDate(start);
+				return 'База знаний за ' + humanDate(start);
 			}
 
 			const dateDiff = Math.abs(end.getTime() - start.getTime());
 			const daysDiff = Math.ceil(dateDiff / SECONDS_PER_DAY_TIMESPAN) + 1;
 
-			return `knowledge base in ${daysDiff} day${daysDiff > 1 ? 's' : ''}`;
+			return `База знаний за ${daysDiff} day${daysDiff > 1 ? 's' : ''}`;
 		}
 	});
 </script>

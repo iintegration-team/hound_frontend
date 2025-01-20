@@ -1,3 +1,1 @@
-import SendMessage from "./ui/SendMessage.vue";
-
-export { SendMessage };
+export { default as SendMessage } from './ui/SendMessage.vue';

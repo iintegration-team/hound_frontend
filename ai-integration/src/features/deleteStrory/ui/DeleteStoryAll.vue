@@ -8,9 +8,9 @@
 	const deleteAll = (event) => {
 		confirm.require({
 			target: event.currentTarget,
-			message: 'Are you sure you want delete all stories?',
+			message: 'Вы уверены, что хотите удалить все истории?',
 			accept: () => {
-				toast.info('Confirmed', 'stories was deleted');
+				toast.info('Успешно', 'Все истории удалены');
 			},
 			...confirmData,
 		});

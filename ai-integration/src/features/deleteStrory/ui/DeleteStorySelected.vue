@@ -9,10 +9,10 @@
 	const deleteSelected = (event) => {
 		confirm.require({
 			target: event.currentTarget,
-			message: 'Are you sure you want delete selected stories?',
+			message: 'Вы уверены, что хотите удалить выбранные истории?',
 
 			accept: () => {
-				toast.info('Confirmed', 'Selected stories was deleted');
+				toast.info('Успешно', 'Выбранные истории удалены');
 			},
 			...confirmData,
 		});

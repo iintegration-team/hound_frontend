@@ -56,7 +56,7 @@
 						v-model="password"
 						:feedback="showLevelPassword"
 						:fluid="true"
-						toggleMask 
+						toggleMask
 						id="password"
 						class="login-form__input"
 						autocomplete="true"
@@ -83,7 +83,7 @@
 
 <style lang="scss" scoped>
 	.login-form {
-		margin-bottom: 100px;  
+		margin-bottom: 100px;
 		width: 100%;
 	}
 
@@ -96,7 +96,6 @@
 	}
 
 	.login-form__input {
-
 		&:user-invalid {
 			border-color: red;
 		}

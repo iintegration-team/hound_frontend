@@ -1,0 +1,1 @@
+export { default as HistoryBar } from './ui/HistoryBar.vue';

@@ -1,5 +1,4 @@
 <script setup>
-	import { shallowRef } from 'vue';
 	import Button from 'primevue/button';
 	import LoginForm from '@/shared/ui/LoginForm.vue';
 
